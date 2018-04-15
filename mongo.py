@@ -42,7 +42,7 @@ def get_one_framework(name):
     regx = re.compile('^' + re.escape(name))#re.compile("^"+name, re.IGNORECASE)e.compile('^' + re.escape(name))
     #for q in framework.find({"product": {"$regex": '/*'+name+'*/'}}):
     result=[]
-    for q in framework.find({"product": {'$regex':name}}):
+    for q in framework.find({"product": {'$regex':name,'$options':'i'}}):
        # print(type(q))
         #   print(q)
         result.append(q)
